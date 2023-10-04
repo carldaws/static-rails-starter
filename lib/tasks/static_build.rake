@@ -9,6 +9,7 @@ namespace :static do
     FileUtils.mkdir(output_dir)
 
     # Precompile assets, copy the public directory to the output directory
+    Rake::Task["assets:clobber"].invoke
     Rake::Task["assets:precompile"].invoke
     FileUtils.cp_r 'public/.', 'site' 
 
