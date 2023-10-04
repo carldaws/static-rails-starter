@@ -13,11 +13,12 @@ In the output static pages (in the 'site' directory), none of the CRUD action li
 ## How To Use
 
 1. Clone the repository
-2. `bin/setup`
-3. `bin/dev`
-4. Create new pages using the app UI, giving them a title, a slug and a (markdown) body
-5. `bin/build`
-6. Check out the `/site` directory, containing your built static site (if you have python3 installed, try `python3 -m http.server 9000` in the `/site` directory)
+2. `bundle`
+3. `bin/setup`
+4. `bin/dev`
+5. Create new pages using the app UI, giving them a title, a slug and a (markdown) body
+6. `bin/build`
+7. Check out the `/site` directory, containing your built static site (if you have python3 installed, try `python3 -m http.server 9000` in the `/site` directory)
 
 ## Notes
 
