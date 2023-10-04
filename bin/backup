@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+cd db
+sqlite3 development.sqlite3 .dump > backup.sql

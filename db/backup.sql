@@ -1,0 +1,13 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY);
+INSERT INTO schema_migrations VALUES('20231004192623');
+CREATE TABLE IF NOT EXISTS "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL);
+INSERT INTO ar_internal_metadata VALUES('environment','development','2023-10-04 19:23:07.094202','2023-10-04 19:23:07.094202');
+CREATE TABLE IF NOT EXISTS "pages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "slug" varchar, "body" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL);
+INSERT INTO pages VALUES(1,'My First Page','first',replace('# This is my first page\n\nHere''s some more text!','\n',char(10)),'2023-10-04 19:28:46.378504','2023-10-04 20:04:12.562813');
+INSERT INTO pages VALUES(2,'Another Page','another','## Here''s another page!','2023-10-04 19:29:50.652263','2023-10-04 19:29:50.652263');
+INSERT INTO pages VALUES(3,'A Third Page','third','Here is a third page','2023-10-04 20:11:43.477269','2023-10-04 20:11:43.477269');
+DELETE FROM sqlite_sequence;
+INSERT INTO sqlite_sequence VALUES('pages',3);
+COMMIT;
